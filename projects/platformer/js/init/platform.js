@@ -35,11 +35,17 @@
          * bottom of the game.
          */
         createPlatform(0, game.world.height - 32, 3, 2);    // DO NOT DELETE
-
-        // example:
-        createPlatform(400, 250);
-        createPlatform(170, 460, 0.5);
         
+        /*  top of the screen is x=0 */
+        /* botttom of the screen is x=668*/
+        /* Halle jump lenght is 40 pixels to 60-100 pixels*/
+
+        createPlatform(140,600,0.3,10);
+        createPlatform(300,500,0.3,15)
+        createPlatform(460,400,0.3,20)
+        createPlatform(194,300,0.5)
+        createPlatform(0,400,0.3)
+        createPlatform(635,289,0.5)
         // ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
     }
