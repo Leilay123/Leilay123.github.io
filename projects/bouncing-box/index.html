@@ -8,17 +8,34 @@
 		.box {
 			width: 70px;
 			height: 70px;
-			background-color: teal;
+			background-color: pink;
 			font-size: 300%;
 			text-align: center;
 			display: block;
 			position: absolute;
 			top: 100px;
 			left: 0px;  /* <--- Change me! */
+			background-image: url("https://www.pngkit.com/png/full/144-1440711_unicorn-clipart-lisa-frank-transparent-background-unicorn-png.png");
+			-webkit-background-size: cover;
+  			-moz-background-size: cover;
+  			-o-background-size: cover;
+			 background-size: cover;
 		}
 		.board{
 			height: 100vh;
 		}
+		body {
+			background: url("https://wallpaperaccess.com/full/3566318.jpg") no-repeat;
+			-webkit-background-size: cover;
+  			-moz-background-size: cover;
+  			-o-background-size: cover;
+			  background-size: cover;
+		}
+
+		box {
+			
+		}
+		
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 
@@ -62,7 +79,8 @@
 			
 			// TODO 2 - Variable declarations 
 			var positionX = 0;
-
+			var points = 0;
+			var speed = 10;
 			
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
@@ -70,9 +88,16 @@
 			turn it around! 
 			*/
 			function update() {
-				// Frame 1 
-				positionX = 0 + 10;
+				positionX = positionX + speed;
 				moveBoxTo (positionX);
+
+				if (positionX > boardWidth){
+					speed = speed * -1;
+				}
+
+				if (positionX < 0){
+					speed = speed * -1;
+				}
 
 			};
 
@@ -83,20 +108,14 @@
 			*/
 			function handleBoxClick() {
 				 positionX = 0;
+				 points = points + 1;
 				 changeBoxText (points);
-				
-				// Frame 1
-				positionX = 0 + 10;
-				moveBoxTo(positionX);
-				// Frame 2 
-				positionX = 10 + 10;
-				moveBoxTo(positionX);
-				// Frame 3
-				positionX = 0 + 10;
-				moveBoxTo(positionX);
-				// Frame 4  
-				positionX = 10 + 10;
-				moveBoxTo(positionX);
+				if (speed >= 0){
+				 	speed = speed + 3;
+				}
+				else if (speed <= 0){
+					speed = speed -3
+				}
 
 
 
