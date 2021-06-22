@@ -54,7 +54,7 @@
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
 
 			// Every 50 milliseconds, call the update Function (see below)
-			setInterval(update, 50);
+			var interval = setInterval(update, 50);
 			
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);
@@ -82,6 +82,7 @@
 			var speedY = 10;
 			var boardHeight = jQuery(window).height();
 			var randNum = Math.random() * 100
+			var 
 			
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
@@ -128,7 +129,9 @@
 					speed = speed -3
 				}
 
-
+			function endGame(){
+				clearInterval(interval);
+			}
 
 			};
 		})();
